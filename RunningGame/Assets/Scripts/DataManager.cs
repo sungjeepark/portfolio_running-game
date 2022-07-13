@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Character
+{
+    MaskDude, VirtualGuy, PinkMan, NinjaFrog
+}
+
 public class DataManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static DataManager instance;
+
+    private void Awake()
     {
-        
+        if (instance == null) instance = this;
+        else if (instance != null) return;
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Character currentCharacter;
 }
