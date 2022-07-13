@@ -13,6 +13,8 @@ public class SelectChar : MonoBehaviour
     SpriteRenderer sR;
     public SelectChar[] chars;
 
+    private int currentIndex;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -50,5 +52,17 @@ public class SelectChar : MonoBehaviour
     {
         anim.SetBool("doublejump", false);
         sR.color = new Color(.5f, .5f, .5f);
+    }
+
+    public void NextChar()
+    {
+        currentIndex++;
+     //   인벤토리의 아이템셀[currentIndex] 안에 캐릭터가 없으면 0으로 초기화
+
+    }
+
+    public void PreviewChar()
+    {
+        currentIndex--;
     }
 }
