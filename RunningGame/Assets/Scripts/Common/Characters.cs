@@ -5,7 +5,7 @@ using UnityEngine;
 public class Characters
 {
     public int gold;
-    public CharCell[] cells = new CharCell[6];
+    public CharCell[] cells = new CharCell[4];
 
     public Characters()
     {

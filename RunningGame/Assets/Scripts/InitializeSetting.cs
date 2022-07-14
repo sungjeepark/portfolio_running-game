@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InitializeSetting : MonoBehaviour
 {
-    [SerializeField] GameObject[] gameObjects;
+    [SerializeField] private  GameObject[] gameObjects;
 
     private void Awake()
     {
@@ -12,6 +12,7 @@ public class InitializeSetting : MonoBehaviour
         {
             DontDestroyOnLoad(gameObjects[i]);
         }
+        SceneController.S_Controller.OpenScene("Main");
     }
 
 }

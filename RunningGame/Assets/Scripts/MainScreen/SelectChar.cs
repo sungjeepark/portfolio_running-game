@@ -57,12 +57,21 @@ public class SelectChar : MonoBehaviour
     public void NextChar()
     {
         currentIndex++;
-     //   인벤토리의 아이템셀[currentIndex] 안에 캐릭터가 없으면 0으로 초기화
+     //인벤토리의 아이템셀[currentIndex] 안에 캐릭터가 없으면 0으로 초기화
 
     }
 
     public void PreviewChar()
     {
         currentIndex--;
+    }
+
+    public void Refresh(CharCell cell)
+    {
+        
+        if (cell.itemCount == 0)
+        {
+            
+        }
     }
 }
