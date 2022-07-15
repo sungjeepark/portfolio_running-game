@@ -1980,6 +1980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c48d523a990d04eb0a8ede0479204c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainScreen: {fileID: 299013380}
   characterSelectbtn: {fileID: 631156586}
   quitCharacterSelectbtn: {fileID: 0}
   gameStartbtn: {fileID: 1745836543}

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MainUIManager : MonoBehaviour
 {
-    private GameObject loadPrefab;
+    [SerializeField] private GameObject mainScreen;
 
 
     [SerializeField] private Button characterSelectbtn;
@@ -25,21 +25,26 @@ public class MainUIManager : MonoBehaviour
     {
         characterSelectbtn.onClick.AddListener(() =>
         {
-            // this.loadPrefab = Resources.Load<GameObject>("Prefab/Screen/CharacterSelectScreen");
-            GameObject A = Instantiate(Resources.Load<GameObject>("Prefab/Screen/CharacterSelectScreen")) as GameObject;
-            //A.transform.SetParent(MainScreen.transform, false); 
-            Instantiate(this.loadPrefab);
-            loadPrefab.SetActive(true); // 낼 물어볼것
+            
+            mainScreen =
+            Instantiate((Resources.Load("Prefab/Screen/CharacterSelectScreen") as GameObject), this.transform.position, Quaternion.identity);
+            mainScreen.transform.SetParent(this.transform);
+
+            // selectScreen.transform.SetParent(mainScreen.transform, false);
+
+
+
         });
-        /*quitCharacterSelectbtn.onClick.AddListener(() =>
-        {
-            this.loadPrefab = Resources.Load<GameObject>("Prefab/Screen/CharacterSelectScreen");
-            loadPrefab.SetActive(false);
-        });*/
+        //quitCharacterSelectbtn.onClick.AddListener(() =>
+        //{
+        //    this.loadPrefab = Resources.Load<GameObject>("Prefab/Screen/CharacterSelectScreen");
+        //    loadPrefab.SetActive(false);
+        //    Destroy(loadPrefab);
+        //});
 
 
 
-
+        
 
 
 
