@@ -25,28 +25,32 @@ public class MainUIManager : MonoBehaviour
     {
         characterSelectbtn.onClick.AddListener(() =>
         {
-            
-            mainScreen =
-            Instantiate((Resources.Load("Prefab/Screen/CharacterSelectScreen") as GameObject), this.transform.position, Quaternion.identity);
-            mainScreen.transform.SetParent(this.transform);
-
-            // selectScreen.transform.SetParent(mainScreen.transform, false);
-
-
-
+            GameObject selectScreen = Instantiate((Resources.Load("Prefab/Screen/CharacterSelectScreen") as GameObject), Vector3.zero, Quaternion.identity);
+            selectScreen.transform.SetParent(mainScreen.transform, false);
         });
-        //quitCharacterSelectbtn.onClick.AddListener(() =>
-        //{
-        //    this.loadPrefab = Resources.Load<GameObject>("Prefab/Screen/CharacterSelectScreen");
-        //    loadPrefab.SetActive(false);
-        //    Destroy(loadPrefab);
-        //});
+
+        shopbtn.onClick.AddListener(() =>
+        {
+            GameObject shopScreen = Instantiate((Resources.Load("Prefab/Screen/ShopScreen") as GameObject), Vector3.zero, Quaternion.identity);
+            shopScreen.transform.SetParent(mainScreen.transform, false);
+        });
+
+        settingbtn.onClick.AddListener(() =>
+        {
+            GameObject settingScreen = Instantiate((Resources.Load("Prefab/Screen/SettingScreen") as GameObject), Vector3.zero, Quaternion.identity);
+            settingScreen.transform.SetParent(mainScreen.transform, false);
+        });
+
+        gameStartbtn.onClick.AddListener(() =>
+        {
+            SceneController.S_Controller.OpenScene("InGame");
+        });
 
 
 
-        
 
 
+       
 
 
 
