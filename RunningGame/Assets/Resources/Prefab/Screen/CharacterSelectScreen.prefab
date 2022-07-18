@@ -167,8 +167,6 @@ MonoBehaviour:
   settingScreenLeftBtn: {fileID: 1075943214020902651}
   settingScreenRightBtn: {fileID: 3882281331162536593}
   selectScreen: {fileID: 1924284030022073799}
-  settingScreen: {fileID: 0}
-  shopScreen: {fileID: 0}
 --- !u!1 &1924284030022073799
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE90\uB9AD\uD130 \uC774\uB984"
+  m_text: "\uCE90\uB9AD\uD130 \uC120\uD0DD"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
   m_sharedMaterial: {fileID: -6124364619073698907, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
@@ -622,7 +620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6367560908665664636, guid: 3750f45c844123341b9a777a96cb1eca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -913,7 +911,7 @@ GameObject:
   - component: {fileID: 6198450357178845696}
   - component: {fileID: 249952205431136512}
   m_Layer: 5
-  m_Name: CharacterName
+  m_Name: CharacterChoose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
