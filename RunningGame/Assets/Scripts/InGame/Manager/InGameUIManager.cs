@@ -13,12 +13,14 @@ public class InGameUIManager : MonoBehaviour
 
     private void Awake()
     {
-        bar.fillAmount = 1f;
+        LoadSceneAdditive();
 
         quitBtn.onClick.AddListener(() =>
         {
             SceneController.S_Controller.OpenScene("Main");
         });
+
+        //bar.fillAmount = 1f;
     }
 
     void LateUpdate()
@@ -29,7 +31,7 @@ public class InGameUIManager : MonoBehaviour
 
     void Start() 
     {
-        LoadSceneAdditive(); 
+         
     }
 
     void LoadSceneAdditive() { SceneManager.LoadScene("Stage1", LoadSceneMode.Additive); }

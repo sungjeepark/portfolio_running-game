@@ -9,7 +9,7 @@ public class CharData
     public string itemDescript;
     public int itemPrice;
     public Sprite itemImage;
-    public AnimationClip itemClip;
+    public RuntimeAnimatorController animatorController;
 
     public CharData(string itemCode, string itemName, string itemDescript, int itemPrice)
     {
@@ -17,7 +17,7 @@ public class CharData
         this.itemName = itemName;
         this.itemDescript = itemDescript;
         this.itemPrice = itemPrice;
-        itemClip = Resources.Load<AnimationClip>($"UI/Sprites/Item/{itemCode}"); // 경로 수정해야함
+        animatorController = Resources.Load<RuntimeAnimatorController>($"CharacterAnimator/{itemCode}"); 
 
     }
 }
