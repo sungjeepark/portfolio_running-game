@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HpItem : MonoBehaviour
 {
-    [SerializeField] private int healHp;
+    [SerializeField] private float healHp;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            HpManager.Instance.AddHp(healHp);
+            InGameManager.Instance.player.AddHp(healHp);
 
             gameObject.SetActive(false);
         }

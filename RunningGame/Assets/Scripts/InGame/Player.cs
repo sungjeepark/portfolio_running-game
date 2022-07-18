@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove: MonoBehaviour
+public class Player: MonoBehaviour
 {
     public Animator animator;
     RuntimeAnimatorController controller;
 
+    [SerializeField] private float maxHp;
+    [SerializeField] private float hpReductionSpeed;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float boostMultiplier;
     [SerializeField] private float jumpHeight;
@@ -14,21 +16,29 @@ public class PlayerMove: MonoBehaviour
     private Rigidbody2D rigid;
     private int jumpCount = 2;
     private bool isJump = false;
+    private float hp;
+    private bool magnetEffect = false;
+    
 
-    void Awake()
+    public float GetHpNormalized()
     {
-        rigid = GetComponent<Rigidbody2D>();
-       
-    }   
-
-    void Update()
-    {
-        PlayerControl();
-        
-        this.transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+        return hp / maxHp;
     }
 
-    
+    public void Damage(float damage)
+    {
+        hp -= damage;
+    }
+
+    public void AddHp(float healHp)
+    {
+        hp += healHp;
+    }
+
+    public void SetMagnetEffectActive(bool value)
+    {
+        magnetEffect = value;
+    }
 
     private void PlayerControl()
     {
@@ -73,4 +83,30 @@ public class PlayerMove: MonoBehaviour
             jumpCount = 2;
         }
     }
+
+    void Awake()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+        hp = maxHp;
+    }
+
+    private void Start()
+    {
+        InGameManager.Instance.player = this;
+    }
+
+    void Update()
+    {
+        PlayerControl();
+
+        this.transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+    }
+
+    void LateUpdate()
+    {
+        hp -= hpReductionSpeed * Time.deltaTime;
+        hp = Mathf.Clamp(hp, 0f, maxHp);
+    }
+
+    
 }

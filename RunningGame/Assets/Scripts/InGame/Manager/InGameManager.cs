@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Character
+public class InGameManager : MonoBehaviour
 {
-    MaskDude, VirtualGuy, PinkMan, NinjaFrog
-}
+    public Player player;
 
-public class DataManager : MonoBehaviour
-{
-    public static DataManager instance;
+    static InGameManager instance;
 
-    public static DataManager Instance
+    public static InGameManager Instance
     {
         get
         {
@@ -31,6 +28,4 @@ public class DataManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public Character currentCharacter;
 }
