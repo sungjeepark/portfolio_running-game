@@ -41,6 +41,11 @@ public class Player: MonoBehaviour
         magnetTimeCurrent += magnetTime;
     }
 
+    public float GetMagnetTime()
+    {
+        return magnetTimeCurrent;
+    }
+
     private void PlayerControl()
     {
         if (jumpCount > 0)
@@ -107,7 +112,6 @@ public class Player: MonoBehaviour
         hp = Mathf.Clamp(hp, 0f, maxHp);
 
         magnetTimeCurrent -= Time.deltaTime;
+        magnetTimeCurrent = Mathf.Clamp(magnetTimeCurrent, 0f, float.MaxValue);
     }
-
-    
 }
