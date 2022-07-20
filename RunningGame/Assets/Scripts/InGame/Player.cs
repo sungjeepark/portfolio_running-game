@@ -7,19 +7,20 @@ public class Player: MonoBehaviour
     public Animator animator;
     RuntimeAnimatorController controller;
 
+    public bool PlayerDie = false;
+    public float itemMoveSpeed = 15f;
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private float boostMultiplier;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float maxHp;
     [SerializeField] private float hpReductionSpeed;
-    [SerializeField] private float itemMoveSpeed;
 
     private Rigidbody2D rigid;
     private int jumpCount = 2;
     private bool isJump = false;
     private float hp;
     private float magnetTimeCurrent = 0f;
-    private bool playerDie = false;
 
     public float GetHpNormalized()
     {

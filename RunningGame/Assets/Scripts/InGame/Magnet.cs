@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
-    }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && InGameManager.Instance.player.PlayerDie == false)
+        {
+            if (InGameManager.Instance.player.GetMagnetTime() != 0f)
+            {
+                Vector2 dir = InGameManager.Instance.player.transform.position - transform.position;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+                Vector2 pos = transform.parent.position;
+                pos += dir.normalized * InGameManager.Instance.player.itemMoveSpeed * Time.deltaTime;
+                transform.parent.position = pos;
+
+                //transform.Translate(dir.normalized * InGameManager.Instance.player.itemMoveSpeed * Time.deltaTime, Space.World);
+            }
+        }
     }
 }
