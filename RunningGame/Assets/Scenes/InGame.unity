@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 518223197}
   - component: {fileID: 518223198}
   m_Layer: 0
-  m_Name: HpManager
+  m_Name: InGameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,8 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f9e34ddf3f393419e8dec57a92a6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
-  hpReductionSpeed: 1
+  player: {fileID: 1714653746}
 --- !u!1 &571810835
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c73e8a7b849de4d9c6e6503ecfe68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 369504429}
+  bar: {fileID: 1505393697}
   quitBtn: {fileID: 646360729}
 --- !u!4 &1276484319
 Transform:
@@ -1065,6 +1066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1714653747}
+  maxHp: 100
+  hpReductionSpeed: 1
   moveSpeed: 12
   boostMultiplier: 2
   jumpHeight: 14
@@ -1271,8 +1274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4158131f86a8c64380808960cd25a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 369504429}
-  bar: {fileID: 1505393697}
 --- !u!95 &1920217213
 Animator:
   serializedVersion: 3

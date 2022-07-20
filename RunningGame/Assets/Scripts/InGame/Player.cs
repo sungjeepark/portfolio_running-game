@@ -7,18 +7,19 @@ public class Player: MonoBehaviour
     public Animator animator;
     RuntimeAnimatorController controller;
 
-    [SerializeField] private float maxHp;
-    [SerializeField] private float hpReductionSpeed;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float boostMultiplier;
     [SerializeField] private float jumpHeight;
+    [SerializeField] private float maxHp;
+    [SerializeField] private float hpReductionSpeed;
+    [SerializeField] private float itemMoveSpeed;
 
     private Rigidbody2D rigid;
     private int jumpCount = 2;
     private bool isJump = false;
     private float hp;
-    private bool magnetEffect = false;
-    
+    private float magnetTimeCurrent = 0f;
+    private bool playerDie = false;
 
     public float GetHpNormalized()
     {
@@ -35,15 +36,13 @@ public class Player: MonoBehaviour
         hp += healHp;
     }
 
-    public void SetMagnetEffectActive(bool value)
+    public void AddMagnetTime(float magnetTime)
     {
-        magnetEffect = value;
+        magnetTimeCurrent += magnetTime;
     }
 
     private void PlayerControl()
     {
-       
-
         if (jumpCount > 0)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -106,6 +105,8 @@ public class Player: MonoBehaviour
     {
         hp -= hpReductionSpeed * Time.deltaTime;
         hp = Mathf.Clamp(hp, 0f, maxHp);
+
+        magnetTimeCurrent -= Time.deltaTime;
     }
 
     
