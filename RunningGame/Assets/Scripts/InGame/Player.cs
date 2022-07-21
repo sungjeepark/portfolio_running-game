@@ -87,6 +87,8 @@ public class Player: MonoBehaviour
             animator.SetBool("doublejump", false);
             jumpCount = 2;
         }
+
+        
     }
 
     void Awake()

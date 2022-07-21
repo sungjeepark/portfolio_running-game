@@ -106,7 +106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE90\uB9AD\uD130 \uC774\uB984"
+  m_text: "\uBABB\uC0DD\uAE34 \uC560"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
   m_sharedMaterial: {fileID: -6124364619073698907, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4422153292065143677, guid: 8123182af98fb8147a7d6e6bf458ba4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
