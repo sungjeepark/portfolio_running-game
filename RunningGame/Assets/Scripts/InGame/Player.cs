@@ -65,7 +65,7 @@ public class Player: MonoBehaviour
                     jumpCount--;
 
                 }
-                else if (jumpCount == 1) // ╢У╨Ма║га
+                else if (jumpCount == 1) // О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
                 {
                     animator.SetBool("jump", false);
                     animator.SetBool("doublejump", true);
