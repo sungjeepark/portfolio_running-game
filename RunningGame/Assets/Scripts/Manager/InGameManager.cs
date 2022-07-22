@@ -25,7 +25,8 @@ public class InGameManager : MonoBehaviour
     {
 
         me = GetComponent<Animator>();
-        EventManager.AddEvent("SelectCharacter", OnSelectCharacter);
+
+        SetChar(GameManager.myCharacters[GameManager.s_index]);
 
         if (instance == null)
         {

@@ -37,6 +37,8 @@ public class DataManager : MonoBehaviour
     private string nickName = "User001";
     private int coin = 100000000;
 
+    
+
     public void SetNickName(string value) 
     {
         nickName = value;

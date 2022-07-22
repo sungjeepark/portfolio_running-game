@@ -934,7 +934,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 123,456,789 G
+  m_text: 1,000,000 G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
   m_sharedMaterial: {fileID: -6124364619073698907, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
@@ -1061,6 +1061,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopScreenQuitBtn: {fileID: 516147891677358145}
-  b: {fileID: 0}
-  c: {fileID: 0}
+  buyHeroButton1: {fileID: 516147891294456507}
+  buyHeroButton1_1: {fileID: 516147891294456509}
   shopScreen: {fileID: 516147890241358236}

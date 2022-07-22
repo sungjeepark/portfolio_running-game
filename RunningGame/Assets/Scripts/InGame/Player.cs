@@ -18,6 +18,8 @@ public class Player: MonoBehaviour
     [SerializeField] private float maxHp;
     [SerializeField] private float hpReductionSpeed;
 
+    SpriteRenderer spriteRenderer;
+
     private Rigidbody2D rigid;
     private int jumpCount = 2;
     private bool isJump = false;
@@ -25,6 +27,9 @@ public class Player: MonoBehaviour
     private float magnetTimeCurrent = 0f;
 
     private bool flagGameOverUIOpen = true;
+
+    public bool isRespawnTime;
+    
 
     public float GetHpNormalized()
     {
@@ -103,10 +108,19 @@ public class Player: MonoBehaviour
         {
             hp = 0;
         }
+
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Obstacle")))
+        {
+            hp -= 5f;
+            // animator.SetTrigger("Hit"); 애니메이터 아직 못만듬 ㅠ
+    
+        }
     }
+   
 
     void Awake()
     {
+        
         rigid = GetComponent<Rigidbody2D>();
         hp = maxHp;
     }
@@ -131,10 +145,37 @@ public class Player: MonoBehaviour
             GameOver();
         }
 
-        hp -= hpReductionSpeed * Time.deltaTime;
+        hp -= hpReductionSpeed * Time.deltaTime * 2f;
         hp = Mathf.Clamp(hp, 0f, maxHp);
 
         magnetTimeCurrent -= Time.deltaTime;
         magnetTimeCurrent = Mathf.Clamp(magnetTimeCurrent, 0f, float.MaxValue);
     }
+
+    void OnDamaged(Vector2 targetPos)
+    {
+        //player  damaged
+        gameObject.layer = 11;
+
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+
+        //reaction forc
+        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+        rigid.AddForce(new Vector2(dirc, 1) * 10.0f, ForceMode2D.Impulse);
+
+        //animation
+        animator.SetTrigger("Hit");
+
+        Invoke("Hit", 2);
+    }
+
+    void OffDamaged()
+    {
+        gameObject.layer = 10;
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
+
+  
+
+
 }

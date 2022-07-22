@@ -53,6 +53,7 @@ public class CharacterSelectScreenUIManager : MonoBehaviour
     private void SelectCharacter()
     {
         anim.runtimeAnimatorController = GameManager.myCharacters[index].animatorController;
+        GameManager.s_index = index;
     }
 
 }
