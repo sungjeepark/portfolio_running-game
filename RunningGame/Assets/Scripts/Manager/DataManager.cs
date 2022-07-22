@@ -33,4 +33,40 @@ public class DataManager : MonoBehaviour
     }
 
     public Character currentCharacter;
+
+    private string nickName = "User001";
+    private int coin = 100000000;
+
+    public void SetNickName(string value) 
+    {
+        nickName = value;
+    }
+
+    public string GetNickName()
+    {
+        return nickName;
+    }
+
+    public void Deposit(int value)
+    {
+        coin += value;
+    }
+
+    public bool Withdraw(int value)
+    {
+        if (coin - value >= 0)
+        {
+            coin -= value;
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
+    }
+
+    public int GetCoin()
+    {
+        return coin;
+    }
 }

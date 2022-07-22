@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 3ad564a6ca142a04cbe3417c8cbfad86
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7448113381798972013
+    second: UI_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -198,7 +201,7 @@ TextureImporter:
         width: 96
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -219,7 +222,7 @@ TextureImporter:
         width: 128
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -240,7 +243,7 @@ TextureImporter:
         width: 96
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -248,6 +251,27 @@ TextureImporter:
       bones: []
       spriteID: 12d411b993915634bbbf7b2778601314
       internalID: 1401717172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6a06f0b8a30d5760800000000000000
+      internalID: 7448113381798972013
       vertices: []
       indices: 
       edges: []

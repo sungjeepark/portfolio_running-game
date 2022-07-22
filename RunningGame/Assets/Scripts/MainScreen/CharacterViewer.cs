@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharacterViewer : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI charNameText;
+
     Animator me;
     private void Awake()
     {
@@ -20,5 +23,6 @@ public class CharacterViewer : MonoBehaviour
     public void SetChar(CharData data)
     {
         me.runtimeAnimatorController = data.animatorController;
+        charNameText.text = data.itemName;
     }
 }

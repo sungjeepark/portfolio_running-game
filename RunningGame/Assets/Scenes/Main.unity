@@ -1043,11 +1043,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e2090c5727b660c4c8b8ed712472d490, type: 3}
-    m_FontSize: 26
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 30
+    m_MaxSize: 36
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1315,8 +1315,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 750, y: -392.39996}
-  m_SizeDelta: {x: 200, y: 100}
+  m_AnchoredPosition: {x: 730, y: -380.39996}
+  m_SizeDelta: {x: 240, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1121852411
 GameObject:
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100,000,000 G
+  m_text: 123,456,789 G
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
   m_sharedMaterial: {fileID: -6124364619073698907, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
@@ -2018,6 +2018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainScreen: {fileID: 299013380}
+  nickNameText: {fileID: 2118783093}
+  coinText: {fileID: 1441619044}
   characterSelectbtn: {fileID: 631156586}
   quitCharacterSelectbtn: {fileID: 0}
   gameStartbtn: {fileID: 1745836543}
@@ -2356,6 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6caa6f23f8bf14e8013733ebc3fffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charNameText: {fileID: 1924850560}
 --- !u!1 &1796512343
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,7 +2493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCE90\uB9AD\uD130 \uC774\uB984"
+  m_text: Mask Dude
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
   m_sharedMaterial: {fileID: -6124364619073698907, guid: 5001dc6c8c96b3e40a105ec8bd1ee631, type: 2}
@@ -2517,8 +2520,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2713,7 +2716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebe4110ff6533d4d891fc129bdc36a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScreenPrefab: {fileID: 0}
 --- !u!1 &2118783090
 GameObject:
   m_ObjectHideFlags: 0

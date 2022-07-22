@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject mainScreen;
 
+    [SerializeField] private TextMeshProUGUI nickNameText;
+    [SerializeField] private TextMeshProUGUI coinText;
 
     [SerializeField] private Button characterSelectbtn;
     [SerializeField] private Button quitCharacterSelectbtn;
@@ -47,18 +50,14 @@ public class MainUIManager : MonoBehaviour
         });
 
 
-
-
-
-       
-
-
-
-
-
         ButtontoQuit.onClick.AddListener(() =>
         {
             Application.Quit();
         });
+    }
+    private void Update()
+    {
+        nickNameText.text = DataManager.Instance.GetNickName();
+        coinText.text = string.Format("{0:N0} G", DataManager.instance.GetCoin());
     }
 }

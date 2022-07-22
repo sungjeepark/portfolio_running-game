@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamMove : MonoBehaviour
+public class TargetFollow : MonoBehaviour
 {
     [SerializeField] private Transform followingTarget;
     [SerializeField] private float moveSpeed;

@@ -8,14 +8,13 @@ using System;
 
 public class InGameUIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject canves;
+
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private Image bar;
     [SerializeField] private Button quitBtn;
 
     [SerializeField] private GameObject player;
-    [SerializeField] private Transform deadZone;
-
-    [SerializeField] private Vector3 deadZoneOffset;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -34,7 +33,10 @@ public class InGameUIManager : MonoBehaviour
 
         quitBtn.onClick.AddListener(() =>
         {
-            SceneController.S_Controller.OpenScene("Main");
+            Time.timeScale = 0f;
+
+            GameObject GiveupScreen = Instantiate((Resources.Load("Prefab/Screen/GiveupScreen") as GameObject), Vector3.zero, Quaternion.identity);
+            GiveupScreen.transform.SetParent(canves.transform, false);
         });
 
         //bar.fillAmount = 1f;
@@ -46,17 +48,5 @@ public class InGameUIManager : MonoBehaviour
         bar.fillAmount = InGameManager.Instance.player.GetHpNormalized();
     }
 
-    void Start() 
-    {
-         
-    }
-
     void LoadSceneAdditive() { SceneManager.LoadScene("Stage1", LoadSceneMode.Additive); }
-
-    private void Update()
-    {
-      deadZone.transform.position = new Vector3(player.transform.position.x,  0) + deadZoneOffset;
-   
-
-    }
 }

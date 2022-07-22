@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingScreenUIManager : MonoBehaviour
 {
+    [SerializeField] private TMP_InputField inputFieldNickName;
+
     [SerializeField] private Button settingScreenQuitBtn;
-    [SerializeField] private Button b;
-    [SerializeField] private Button c;
+    [SerializeField] private Button changeNickNameBtn;
+    [SerializeField] private Button resetHighScoreBtn;
+    [SerializeField] private Button resetGameDataBtn;
 
    
     [SerializeField] private GameObject settingScreen;
@@ -19,15 +23,22 @@ public class SettingScreenUIManager : MonoBehaviour
             Destroy(settingScreen);
         });
 
-        /*settingScreenLeftBtn.onClick.AddListener(() =>
+        changeNickNameBtn.onClick.AddListener(() =>
         {
-            Destroy(settingScreen);
+            if (inputFieldNickName.text != string.Empty)
+            {
+                DataManager.Instance.SetNickName(inputFieldNickName.text);
+            }
         });
 
-        settingScreenRightBtn.onClick.AddListener(() =>
+        resetHighScoreBtn.onClick.AddListener(() =>
         {
-            Destroy(shopScreen);
-        });*/
-    }
 
+        });
+
+        resetGameDataBtn.onClick.AddListener(() =>
+        {
+
+        });
+    }
 }

@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 393726129}
   - component: {fileID: 393726128}
   - component: {fileID: 393726127}
+  - component: {fileID: 393726130}
   m_Layer: 6
   m_Name: DeadZone
   m_TagString: Untagged
@@ -356,7 +357,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3882353}
   m_FlipX: 0
   m_FlipY: 0
@@ -364,7 +365,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &393726129
@@ -375,12 +376,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393726126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.022, y: -3.58, z: 0}
-  m_LocalScale: {x: 21.46697, y: 1.0270545, z: 1}
+  m_LocalPosition: {x: 4, y: -8, z: 0}
+  m_LocalScale: {x: 21.46697, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &393726130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393726126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca422fcbc93a1742ba2f79da0bdcbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followingTarget: {fileID: 1714653744}
+  moveSpeed: 10
 --- !u!1 &470749055
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,12 +779,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c73e8a7b849de4d9c6e6503ecfe68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canves: {fileID: 1920217207}
   scoreText: {fileID: 369504429}
   bar: {fileID: 1505393697}
   quitBtn: {fileID: 646360729}
   player: {fileID: 1714653740}
-  deadZone: {fileID: 393726129}
-  deadZoneOffset: {x: 0, y: -5, z: 0}
 --- !u!4 &1276484319
 Transform:
   m_ObjectHideFlags: 0
@@ -1180,10 +1194,11 @@ MonoBehaviour:
   animator: {fileID: 1714653747}
   PlayerDie: 0
   itemMoveSpeed: 15
+  canves: {fileID: 1920217207}
   moveSpeed: 12
   boostMultiplier: 2
   jumpHeight: 14
-  maxHp: 100
+  maxHp: 50
   hpReductionSpeed: 1
 --- !u!95 &1714653747
 Animator:

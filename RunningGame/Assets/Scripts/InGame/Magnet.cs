@@ -6,7 +6,7 @@ public class Magnet : MonoBehaviour
 {
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && InGameManager.Instance.player.PlayerDie == false)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && !InGameManager.Instance.player.PlayerDie)
         {
             if (InGameManager.Instance.player.GetMagnetTime() != 0f)
             {

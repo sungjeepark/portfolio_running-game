@@ -10,6 +10,8 @@ public class Player: MonoBehaviour
     public bool PlayerDie = false;
     public float itemMoveSpeed = 15f;
 
+    [SerializeField] private GameObject canves;
+
     [SerializeField] private float moveSpeed;
     [SerializeField] private float boostMultiplier;
     [SerializeField] private float jumpHeight;
@@ -21,6 +23,8 @@ public class Player: MonoBehaviour
     private bool isJump = false;
     private float hp;
     private float magnetTimeCurrent = 0f;
+
+    private bool flagGameOverUIOpen = true;
 
     public float GetHpNormalized()
     {
@@ -71,13 +75,20 @@ public class Player: MonoBehaviour
                 }
             }
         }
-
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-        {
-
-        }
     }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0f;
+
+        PlayerDie = true;
+
+        GameObject gameOverScreen = Instantiate((Resources.Load("Prefab/Screen/GameOverScreen") as GameObject), Vector3.zero, Quaternion.identity);
+        gameOverScreen.transform.SetParent(canves.transform, false);
+
+        EventManager.SendEvent("GameOver :: DisplayLastScore", ScoreManager.Instance.GetScore());
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
@@ -88,7 +99,10 @@ public class Player: MonoBehaviour
             jumpCount = 2;
         }
 
-        
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("DeadZone")))
+        {
+            hp = 0;
+        }
     }
 
     void Awake()
@@ -111,6 +125,12 @@ public class Player: MonoBehaviour
 
     void LateUpdate()
     {
+        if (hp <= 0 && flagGameOverUIOpen)
+        {
+            flagGameOverUIOpen = false;
+            GameOver();
+        }
+
         hp -= hpReductionSpeed * Time.deltaTime;
         hp = Mathf.Clamp(hp, 0f, maxHp);
 

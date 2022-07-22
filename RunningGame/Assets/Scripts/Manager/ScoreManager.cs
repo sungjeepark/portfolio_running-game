@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private static int nowScore;
+    private static int score;
 
     static ScoreManager instance;
 
@@ -27,15 +27,20 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        EventManager.AddEvent("InGame :: Init", (p) => 
+        { 
+            score = 0; 
+        });
     }
 
-    public void AddScore(int score)
+    public void AddScore(int value)
     {
-        nowScore += score;
+        score += value;
     }
 
     public int GetScore()
     {
-        return nowScore;
+        return score;
     }
 }
