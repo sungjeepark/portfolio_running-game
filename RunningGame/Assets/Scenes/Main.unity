@@ -2359,6 +2359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charNameText: {fileID: 1924850560}
+  anim: {fileID: 0}
+  button: {fileID: 1745836543}
 --- !u!1 &1796512343
 GameObject:
   m_ObjectHideFlags: 0

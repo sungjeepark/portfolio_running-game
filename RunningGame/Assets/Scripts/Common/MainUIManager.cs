@@ -46,6 +46,7 @@ public class MainUIManager : MonoBehaviour
 
         gameStartbtn.onClick.AddListener(() =>
         {
+            
             SceneController.S_Controller.OpenScene("InGame");
         });
 

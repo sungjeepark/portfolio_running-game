@@ -7,6 +7,9 @@ using TMPro;
 public class CharacterViewer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI charNameText;
+    [SerializeField] Animator anim;
+    [SerializeField] Button button;
+    
 
     Animator me;
     private void Awake()
@@ -25,4 +28,6 @@ public class CharacterViewer : MonoBehaviour
         me.runtimeAnimatorController = data.animatorController;
         charNameText.text = data.itemName;
     }
+
+  
 }

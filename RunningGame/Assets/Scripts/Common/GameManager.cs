@@ -9,10 +9,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        CharMng.AddItem(new CharData("0001", "Mask Dude", "ц╗га1", 1));
-        CharMng.AddItem(new CharData("0002", "Pink Man", "ц╗га2", 1));
-        CharMng.AddItem(new CharData("0003", "Virtual Guy", "ц╗га3", 1));
-        CharMng.AddItem(new CharData("0004", "Ninja Frog", "ц╗га4", 1));
+        CharMng.AddItem(new CharData("0001", "Mask Dude", "ц╗О©╫О©╫1", 1));
+        CharMng.AddItem(new CharData("0002", "Ninja Frog", "ц╗О©╫О©╫2", 1));
+        CharMng.AddItem(new CharData("0003", "Pink Man", "ц╗О©╫О©╫3", 1));
+        CharMng.AddItem(new CharData("0004", "Virtual Guy", "ц╗О©╫О©╫4", 1));
 
         GameManager.myCharacters.Add(CharMng.GetItem("0001"));
         GameManager.myCharacters.Add(CharMng.GetItem("0002"));
